@@ -22,6 +22,9 @@
         src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg"
         alt=""
       />
+      <button class="menu-toggle" aria-label="Open menu" style="display:none;">
+        <i class="ri-menu-line"></i>
+      </button>
       <h4>TOPTRACER RANGE</h4>
       <h4>Golf Lessons</h4>
       <h4>Adventure Golf</h4>
@@ -138,7 +141,7 @@
           Excellent couple of hours, relax and enjoy in the fun. Staff were
           accommodating, friendly and very helpful. Café on site for
           refreshments etc. Will keep children enterntained during the holidays.
-          Worth a visit if you haven’t been.
+          Worth a visit if you haven't been.
         </p>
         <img
           id="colon1"
@@ -222,5 +225,23 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="script.js"></script>
+    <script>
+      // Hamburger menu toggle for mobile
+      const nav = document.getElementById('nav');
+      const menuToggle = document.querySelector('.menu-toggle');
+      function checkMenuDisplay() {
+        if (window.innerWidth <= 600) {
+          menuToggle.style.display = 'block';
+        } else {
+          menuToggle.style.display = 'none';
+          nav.classList.remove('open');
+        }
+      }
+      menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('open');
+      });
+      window.addEventListener('resize', checkMenuDisplay);
+      window.addEventListener('DOMContentLoaded', checkMenuDisplay);
+    </script>
   </body>
 </html>
